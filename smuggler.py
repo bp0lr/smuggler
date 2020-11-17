@@ -371,7 +371,7 @@ def print_info(msg, file_handle=None):
 	msg = Style.BRIGHT + Fore.MAGENTA + "[%s] %s"%(Fore.CYAN+'+'+Fore.MAGENTA, msg) + Style.RESET_ALL
 	plaintext = ansi_escape.sub('', msg)
 	print(CF(msg))
-	if file_handle is not None:
+	if file_handle is not None and Args.quiet == False:
 		file_handle.write(plaintext+"\n")
 
 if __name__ == "__main__":
